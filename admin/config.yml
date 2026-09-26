@@ -27,6 +27,21 @@ collections:
             default: false
             hint: "Turn ON to show a 'temporarily offline' message instead of the site, for every visitor. Turn OFF to bring it back."
 
+          - label: "Home Page"
+            name: "home"
+            widget: "object"
+            collapsed: false
+            fields:
+              - label: "Hero image"
+                name: "heroImage"
+                widget: "image"
+                hint: "Main 4:5 image shown next to the large AKE PETCU wordmark on the home page."
+              - label: "Hero image description"
+                name: "heroAlt"
+                widget: "string"
+                default: "Ake Petcu — photography and visual work"
+                hint: "Short description of the image for accessibility."
+
           - label: "Texts"
             name: "texts"
             widget: "object"
