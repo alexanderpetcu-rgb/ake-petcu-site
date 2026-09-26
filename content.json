@@ -2,14 +2,14 @@
   "siteDown": false,
   "home": {
     "heroImage": "assets/uploads/b5df060e-d8de-43b4-bc98-7a5c66f133d6.png",
-    "heroFormat": "portrait",
-    "heroAlt": "Ake Petcu — photography and visual work",
-    "photographyImage": "assets/photography-test.jpg",
-    "photographyFormat": "portrait",
+    "postAlt": "Post production — editing, color and sound design",
     "photographyAlt": "Photography by Ake Petcu",
-    "postImage": "assets/postproduction-test.jpg",
+    "heroAlt": "Ake Petcu — photography and visual work",
+    "heroFormat": "portrait",
+    "photographyFormat": "portrait",
     "postFormat": "landscape",
-    "postAlt": "Post production — editing, color and sound design"
+    "postImage": "assets/uploads/6f324388-e8da-4caf-a257-479950fa4cb2.png",
+    "photographyImage": "assets/photography-test.jpg"
   },
   "texts": {
     "aboutEyebrow": "Photographer and cinematographer",
