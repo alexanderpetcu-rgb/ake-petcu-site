@@ -2,7 +2,14 @@
   "siteDown": false,
   "home": {
     "heroImage": "assets/uploads/b5df060e-d8de-43b4-bc98-7a5c66f133d6.png",
-    "heroAlt": "Ake Petcu — photography and visual work"
+    "heroFormat": "portrait",
+    "heroAlt": "Ake Petcu — photography and visual work",
+    "photographyImage": "assets/photography-test.jpg",
+    "photographyFormat": "portrait",
+    "photographyAlt": "Photography by Ake Petcu",
+    "postImage": "assets/postproduction-test.jpg",
+    "postFormat": "landscape",
+    "postAlt": "Post production — editing, color and sound design"
   },
   "texts": {
     "aboutEyebrow": "Photographer and cinematographer",
@@ -16,26 +23,32 @@
       "images": [
         {
           "src": "assets/gallery-portrait-1.jpg",
+          "format": "portrait",
           "alt": "Portrait study 1"
         },
         {
           "src": "assets/gallery-portrait-2.jpg",
+          "format": "portrait",
           "alt": "Portrait study 2"
         },
         {
           "src": "assets/gallery-portrait-3.jpg",
+          "format": "portrait",
           "alt": "Portrait study 3"
         },
         {
           "src": "assets/gallery-portrait-4.jpg",
+          "format": "portrait",
           "alt": "Portrait study 4"
         },
         {
           "src": "assets/gallery-portrait-5.jpg",
+          "format": "portrait",
           "alt": "Portrait study 5"
         },
         {
           "src": "assets/gallery-portrait-6.jpg",
+          "format": "portrait",
           "alt": "Portrait study 6"
         }
       ]
@@ -47,26 +60,32 @@
       "images": [
         {
           "src": "assets/gallery-editorial-1.jpg",
+          "format": "portrait",
           "alt": "Editorial study 1"
         },
         {
           "src": "assets/gallery-editorial-2.jpg",
+          "format": "portrait",
           "alt": "Editorial study 2"
         },
         {
           "src": "assets/gallery-editorial-3.jpg",
+          "format": "portrait",
           "alt": "Editorial study 3"
         },
         {
           "src": "assets/gallery-editorial-4.jpg",
+          "format": "portrait",
           "alt": "Editorial study 4"
         },
         {
           "src": "assets/gallery-editorial-5.jpg",
+          "format": "portrait",
           "alt": "Editorial study 5"
         },
         {
           "src": "assets/gallery-editorial-6.jpg",
+          "format": "portrait",
           "alt": "Editorial study 6"
         }
       ]
@@ -78,26 +97,32 @@
       "images": [
         {
           "src": "assets/gallery-actor-headshots-1.jpg",
+          "format": "portrait",
           "alt": "Actor headshot 1"
         },
         {
           "src": "assets/gallery-actor-headshots-2.jpg",
+          "format": "portrait",
           "alt": "Actor headshot 2"
         },
         {
           "src": "assets/gallery-actor-headshots-3.jpg",
+          "format": "portrait",
           "alt": "Actor headshot 3"
         },
         {
           "src": "assets/gallery-actor-headshots-4.jpg",
+          "format": "portrait",
           "alt": "Actor headshot 4"
         },
         {
           "src": "assets/gallery-actor-headshots-5.jpg",
+          "format": "portrait",
           "alt": "Actor headshot 5"
         },
         {
           "src": "assets/gallery-actor-headshots-6.jpg",
+          "format": "portrait",
           "alt": "Actor headshot 6"
         }
       ]
