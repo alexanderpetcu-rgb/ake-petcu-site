@@ -187,10 +187,23 @@ if(homeNav&&darkNavSections.length){
 <script>
 window.SITE_DATA_READY.then(function(){
  try{
-  var t = (window.SITE_DATA && window.SITE_DATA.texts) || {};
-  if(t.aboutEyebrow) document.getElementById('about-eyebrow').textContent = t.aboutEyebrow;
-  if(t.contactHeading) document.getElementById('contact-heading').textContent = t.contactHeading;
- }catch(e){}
+   var data = window.SITE_DATA || {};
+
+   var t = data.texts || {};
+   if(t.aboutEyebrow) document.getElementById('about-eyebrow').textContent = t.aboutEyebrow;
+   if(t.contactHeading) document.getElementById('contact-heading').textContent = t.contactHeading;
+
+   var home = data.home || {};
+   var heroImage = document.querySelector('.hero-image img');
+
+   if(heroImage && home.heroImage){
+     heroImage.src = home.heroImage;
+   }
+
+   if(heroImage && home.heroAlt){
+     heroImage.alt = home.heroAlt;
+   }
+  }catch(e){}
 });
 </script>
 </body></html>
