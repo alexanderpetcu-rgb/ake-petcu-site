@@ -1,0 +1,104 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Where uploaded images are stored in the repo, and the URL prefix used to
+# reach them from the site (must match how the site links to assets/...).
+media_folder: "assets/uploads"
+public_folder: "assets/uploads"
+
+# Decap commits straight to "branch" above (no editorial review step).
+# Set to true later if you want changes to go through a draft/preview step.
+publish_mode: simple
+
+locale: "en"
+
+collections:
+  - name: "site"
+    label: "Site Content"
+    files:
+      - file: "content.json"
+        label: "Everything"
+        name: "content"
+        fields:
+          - label: "Take the whole site down"
+            name: "siteDown"
+            widget: "boolean"
+            default: false
+            hint: "Turn ON to show a 'temporarily offline' message instead of the site, for every visitor. Turn OFF to bring it back."
+
+          - label: "Texts"
+            name: "texts"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "About section — small line under 'Ake Petcu'", name: "aboutEyebrow", widget: "string" }
+              - { label: "Contact section — word after 'Say'", name: "contactHeading", widget: "string" }
+
+          - label: "Photography"
+            name: "photography"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "Portrait"
+                name: "portrait"
+                widget: "object"
+                collapsed: true
+                fields: &photo_cat_fields
+                  - { label: "Tagline (one short line)", name: "tagline", widget: "string" }
+                  - { label: "Intro paragraph", name: "intro", widget: "text" }
+                  - label: "Photos"
+                    name: "images"
+                    widget: "list"
+                    summary: "{{fields.alt}}"
+                    fields:
+                      - { label: "Photo", name: "src", widget: "image" }
+                      - { label: "Description (for accessibility)", name: "alt", widget: "string" }
+
+              - label: "Editorial"
+                name: "editorial"
+                widget: "object"
+                collapsed: true
+                fields: *photo_cat_fields
+
+              - label: "Actor Headshots"
+                name: "actor-headshots"
+                widget: "object"
+                collapsed: true
+                fields: *photo_cat_fields
+
+          - label: "Post Production"
+            name: "post"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "Editing"
+                name: "editing"
+                widget: "object"
+                collapsed: true
+                fields: &post_cat_fields
+                  - { label: "Tagline (one short line)", name: "tagline", widget: "string" }
+                  - { label: "Cover image (shown on the overview cards)", name: "cover", widget: "image" }
+                  - label: "Projects"
+                    name: "projects"
+                    widget: "list"
+                    summary: "{{fields.title}}"
+                    fields:
+                      - { label: "Unique ID (lowercase, no spaces, e.g. my-project)", name: "id", widget: "string", pattern: ['^[a-z0-9-]+$', "Lowercase letters, numbers and dashes only"] }
+                      - { label: "Title", name: "title", widget: "string" }
+                      - { label: "Type (e.g. Short film, Documentary, Commercial)", name: "type", widget: "string" }
+                      - { label: "Description", name: "description", widget: "text" }
+                      - { label: "Vimeo video ID (the number in the video's Vimeo URL)", name: "vimeoId", widget: "string" }
+                      - { label: "Show a Before / After comparison on this project", name: "beforeAfter", widget: "boolean", default: false }
+
+              - label: "Color"
+                name: "color"
+                widget: "object"
+                collapsed: true
+                fields: *post_cat_fields
+
+              - label: "Sound Design"
+                name: "sound-design"
+                widget: "object"
+                collapsed: true
+                fields: *post_cat_fields
