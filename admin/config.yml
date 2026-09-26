@@ -35,12 +35,57 @@ collections:
               - label: "Hero image"
                 name: "heroImage"
                 widget: "image"
-                hint: "Main 4:5 image shown next to the large AKE PETCU wordmark on the home page."
+                hint: "Main image shown next to the large AKE PETCU wordmark."
+
+              - label: "Hero image format"
+                name: "heroFormat"
+                widget: "select"
+                options:
+                  - { label: "Portrait 4:5", value: "portrait" }
+                  - { label: "Landscape 3:2", value: "landscape" }
+                default: "portrait"
+
               - label: "Hero image description"
                 name: "heroAlt"
                 widget: "string"
                 default: "Ake Petcu — photography and visual work"
                 hint: "Short description of the image for accessibility."
+
+              - label: "Photography section image"
+                name: "photographyImage"
+                widget: "image"
+                hint: "Large image shown in the Photography section of the home page."
+
+              - label: "Photography image format"
+                name: "photographyFormat"
+                widget: "select"
+                options:
+                  - { label: "Portrait 4:5", value: "portrait" }
+                  - { label: "Landscape 3:2", value: "landscape" }
+                default: "portrait"
+
+              - label: "Photography image description"
+                name: "photographyAlt"
+                widget: "string"
+                default: "Photography by Ake Petcu"
+
+              - label: "Post Production section image"
+                name: "postImage"
+                widget: "image"
+                hint: "Large image shown in the Post Production section of the home page."
+
+              - label: "Post Production image format"
+                name: "postFormat"
+                widget: "select"
+                options:
+                  - { label: "Portrait 4:5", value: "portrait" }
+                  - { label: "Landscape 3:2", value: "landscape" }
+                default: "landscape"
+
+              - label: "Post Production image description"
+                name: "postAlt"
+                widget: "string"
+                default: "Post production — editing, color and sound design"
 
           - label: "Texts"
             name: "texts"
@@ -68,6 +113,13 @@ collections:
                     summary: "{{fields.alt}}"
                     fields:
                       - { label: "Photo", name: "src", widget: "image" }
+                      - label: "Format"
+                        name: "format"
+                        widget: "select"
+                        options:
+                          - { label: "Portrait 4:5", value: "portrait" }
+                          - { label: "Landscape 3:2", value: "landscape" }
+                        default: "portrait"
                       - { label: "Description (for accessibility)", name: "alt", widget: "string" }
 
               - label: "Editorial"
