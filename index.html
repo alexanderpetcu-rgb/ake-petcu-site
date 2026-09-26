@@ -74,7 +74,7 @@ html[data-site-down="1"] #maintenance-banner{display:flex!important;min-height:1
     <p class="intro">Portrait, editorial and actor headshot photography built around controlled light, precise framing and a straightforward approach.</p>
    <a class="section-cta" href="#page-photography">EXPLORE PHOTOGRAPHY →</a>
    </div>
-   <figure class="photo-art"><img src="assets/photography-test.jpg" alt="Temporary close-up photographic study"><small>TEST IMAGE · TO BE REPLACED</small></figure>
+   <figure class="photo-art"><img src="assets/photography-test.jpg" alt="Temporary close-up photographic study"></figure>
   </div>
  </div>
 </section>
@@ -194,6 +194,8 @@ window.SITE_DATA_READY.then(function(){
    if(t.contactHeading) document.getElementById('contact-heading').textContent = t.contactHeading;
 
    var home = data.home || {};
+
+   var heroFigure = document.querySelector('.hero-image');
    var heroImage = document.querySelector('.hero-image img');
 
    if(heroImage && home.heroImage){
@@ -203,7 +205,46 @@ window.SITE_DATA_READY.then(function(){
    if(heroImage && home.heroAlt){
      heroImage.alt = home.heroAlt;
    }
-  }catch(e){}
+
+   if(heroFigure && home.heroFormat){
+     heroFigure.style.aspectRatio = home.heroFormat === 'landscape' ? '3 / 2' : '4 / 5';
+   }
+
+
+   var photographyFigure = document.querySelector('.photo-art');
+   var photographyImage = document.querySelector('.photo-art img');
+
+   if(photographyImage && home.photographyImage){
+     photographyImage.src = home.photographyImage;
+   }
+
+   if(photographyImage && home.photographyAlt){
+     photographyImage.alt = home.photographyAlt;
+   }
+
+   if(photographyFigure && home.photographyFormat){
+     photographyFigure.style.aspectRatio = home.photographyFormat === 'landscape' ? '3 / 2' : '4 / 5';
+     photographyFigure.style.height = 'auto';
+   }
+
+
+   var postFigure = document.querySelector('.post-art');
+   var postImage = document.querySelector('.post-art img');
+
+   if(postImage && home.postImage){
+     postImage.src = home.postImage;
+   }
+
+   if(postImage && home.postAlt){
+     postImage.alt = home.postAlt;
+   }
+
+   if(postFigure && home.postFormat){
+     postFigure.style.aspectRatio = home.postFormat === 'landscape' ? '3 / 2' : '4 / 5';
+     postFigure.style.height = 'auto';
+   }
+
+ }catch(e){}
 });
 </script>
 </body></html>
