@@ -1,0 +1,70 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Project — Ake Petcu</title>
+<style>
+:root{--cream:#f2f0eb;--ink:#111;--dark:#0a0e0f;--light:#f2f0eb;--muted:#6b6863;--rail:230px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Georgia,"Times New Roman",serif;background:var(--dark);color:var(--light)}
+a{color:inherit;text-decoration:none}img{display:block;width:100%;height:100%;object-fit:cover}
+.detail{min-height:100vh;padding:0 0 26px;position:relative}
+.brand{font-family:Arial,Helvetica,sans-serif;font-size:12px;letter-spacing:.08em}
+.rail{display:flex;flex-direction:column;align-items:flex-start;gap:10px;font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:.08em}.topnav{display:flex;justify-content:space-between;align-items:flex-start;padding:34px 5vw 0}
+.crumbs{font-family:Arial,Helvetica,sans-serif;font-size:10px;letter-spacing:.1em;color:#a9a59d;margin:0 0 18px}.backlink{display:inline-block;font-family:Arial,Helvetica,sans-serif;font-size:10px;letter-spacing:.1em;color:#a9a59d;margin:0 0 16px;border-bottom:1px solid transparent}.backlink:hover{border-bottom-color:currentColor}
+.crumbs a{border-bottom:1px solid transparent}.crumbs a:hover{border-bottom-color:currentColor}
+.page{max-width:980px;margin:56px auto 0;padding:0 5vw}.page h1{font-weight:400;font-size:clamp(40px,5vw,64px);line-height:1;margin:0 0 8px}
+.ptype{font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:.1em;color:#a9a59d;margin-bottom:22px}
+.copy{font-size:16px;line-height:1.55;color:#d8d5cf;max-width:640px;margin:0 0 34px}
+.reel{position:relative;width:100%;aspect-ratio:16/9;background:#000;overflow:hidden}
+.reel iframe{width:100%;height:100%;border:0}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:34px}
+.ba figure{margin:0;position:relative;aspect-ratio:4/3;overflow:hidden}
+.ba figcaption{position:absolute;left:10px;bottom:10px;font-family:Arial,Helvetica,sans-serif;font-size:10px;letter-spacing:.1em;background:rgba(10,14,15,.7);padding:6px 9px}
+.footer{display:flex;justify-content:space-between;align-items:center;margin-top:90px;font-family:Arial,Helvetica,sans-serif;font-size:9px;color:#a9a59d}
+.footer-links{display:flex;gap:15px}.footer-links a+a:before{content:"|";margin-right:15px;color:#666}
+#maintenance-banner{display:none}
+html[data-site-down="1"] body>*:not(#maintenance-banner){display:none!important}
+html[data-site-down="1"] #maintenance-banner{display:flex!important;min-height:100vh;align-items:center;justify-content:center;font-family:Arial,Helvetica,sans-serif;font-size:13px;letter-spacing:.06em;background:var(--dark);color:var(--light);text-align:center;padding:5vw}
+@media(max-width:900px){.topnav{padding:28px 7vw 0;flex-direction:column;align-items:flex-start;gap:14px}.page{padding:0 7vw;margin-top:28px}.rail{flex-direction:row;flex-wrap:wrap;gap:14px}.ba{grid-template-columns:1fr}.footer{flex-direction:column;gap:10px;align-items:flex-start}}
+</style></head>
+<body>
+<div id="maintenance-banner">This site is temporarily offline for updates. Please check back soon.</div>
+<script src="data.js"></script>
+<div class="detail">
+ <div class="topnav"><a class="brand" href="index.html#top">AKE PETCU</a>
+ <nav class="rail" aria-label="Primary"><a href="photography.html">PHOTOGRAPHY</a><a class="active" href="post-production.html">POST PRODUCTION</a><a href="index.html#about">ABOUT</a><a href="index.html#contact">CONTACT</a></nav></div>
+ <div class="page">
+  <a href="post-production.html" class="backlink" id="back-link" onclick="if(history.length>1){event.preventDefault();history.back();}">← BACK</a>
+  <p class="crumbs" id="crumbs"></p>
+  <h1 id="p-title"></h1>
+  <div class="ptype" id="p-type"></div>
+  <p class="copy" id="p-desc"></p>
+  <div class="reel" id="reel"></div>
+  <div class="ba" id="ba" style="display:none"></div>
+  <footer class="footer"><span>© 2026 AKE PETCU. All rights reserved.</span><span class="footer-links"><a href="privacy.html">Privacy</a><a href="index.html#page-sitemap">Sitemap</a></span></footer>
+ </div>
+</div>
+<script>
+window.SITE_DATA_READY.then(function(){
+ if(!window.SITE_DATA){
+  document.querySelector('.page').innerHTML = '<h1>Content could not load</h1><p class="copy">This page needs <code>data.js</code>, which failed to load (check that data.js was uploaded in the same folder as this page). <a href="index.html">Back to Home</a>.</p>';
+  return;
+ }
+ var params = new URLSearchParams(location.search);
+ var cat = params.get('cat') || 'editing';
+ var id = params.get('id') || '';
+ var section = (window.SITE_DATA.post || {})[cat];
+ var proj = section && (section.projects||[]).find(function(p){ return p.id === id; });
+ if(!section || !proj){ document.querySelector('.page').innerHTML = '<h1>Not found</h1><p>That project does not exist yet. <a href="post-production.html">Back to Post Production</a>.</p>'; return; }
+ document.title = proj.title + ' — Ake Petcu';
+ document.getElementById('back-link').href = 'post.html?cat='+cat;
+ document.getElementById('crumbs').innerHTML = '<a href="post-production.html">POST PRODUCTION</a> → <a href="post.html?cat='+cat+'">'+section.label.toUpperCase()+'</a> → '+proj.title.toUpperCase();
+ document.getElementById('p-title').textContent = proj.title;
+ document.getElementById('p-type').textContent = proj.type;
+ document.getElementById('p-desc').textContent = proj.description;
+ document.getElementById('reel').innerHTML = '<iframe src="https://player.vimeo.com/video/'+proj.vimeoId+'?title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy" title="'+proj.title+' showreel"></iframe>';
+ if(proj.beforeAfter){
+  var ba = document.getElementById('ba'); ba.style.display='grid';
+  ba.innerHTML = '<figure><img src="'+section.cover+'" alt="Before grade" style="filter:grayscale(1) contrast(.9)"><figcaption>BEFORE</figcaption></figure>'+
+                  '<figure><img src="'+section.cover+'" alt="After grade"><figcaption>AFTER</figcaption></figure>';
+ }
+});
+</script>
+</body></html>

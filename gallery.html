@@ -1,0 +1,229 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Photography — Ake Petcu</title>
+<meta name="description" content="Photography gallery — Ake Petcu.">
+<style>
+:root{--cream:#f2f0eb;--ink:#111;--muted:#6b6863;--rail:230px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Georgia,"Times New Roman",serif;background:var(--cream);color:var(--ink)}
+a{color:inherit;text-decoration:none}img{display:block;width:100%;height:100%;object-fit:cover}
+.detail{min-height:100vh;padding:0 0 26px;position:relative}
+.brand{font-family:Arial,Helvetica,sans-serif;font-size:12px;letter-spacing:.08em}
+.rail{display:flex;flex-direction:column;align-items:flex-start;gap:10px;font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:.08em}.topnav{display:flex;justify-content:space-between;align-items:flex-start;padding:34px 5vw 0}
+.rail a{position:relative}.rail a.active:before{content:"•";position:absolute;margin-left:-22px;font-size:16px;line-height:8px}
+.crumbs{font-family:Arial,Helvetica,sans-serif;font-size:10px;letter-spacing:.1em;color:var(--muted);margin:0 0 14px}.backlink{display:inline-block;font-family:Arial,Helvetica,sans-serif;font-size:10px;letter-spacing:.1em;color:var(--muted);margin:0 0 18px;border-bottom:1px solid transparent}.backlink:hover{border-bottom-color:currentColor}
+.crumbs a{border-bottom:1px solid transparent}.crumbs a:hover{border-bottom-color:currentColor}
+.page{max-width:1280px;margin:56px auto 0;padding:0 5vw}.page h1{font-weight:400;font-size:clamp(46px,5.6vw,74px);line-height:.95;margin:0 0 14px}
+.tagline{font-size:clamp(16px,1.3vw,20px);margin:0 0 14px;color:#333}
+.copy{max-width:620px;font-size:15px;line-height:1.5;margin:0 0 40px;color:#333}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.tile{cursor:pointer;overflow:hidden;background:#ccc;aspect-ratio:4/5}
+.tile img{transition:transform .35s ease}.tile:hover img{transform:scale(1.035)}
+.book{margin-top:80px;border-top:1px solid #c9c5bd;padding-top:44px;max-width:620px}
+.book h2{font-weight:400;font-size:clamp(28px,3vw,38px);margin:0 0 10px}
+.book p{font-size:14px;line-height:1.5;color:#333;margin:0 0 26px;max-width:520px}
+.form{display:grid;gap:20px}.row2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.field{display:grid;gap:6px}.field label{font-family:Arial,Helvetica,sans-serif;font-size:10px;letter-spacing:.1em;color:var(--muted)}
+.field input,.field select,.field textarea{width:100%;border:0;border-bottom:1px solid #9a968d;background:transparent;color:var(--ink);padding:10px 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;outline:none;border-radius:0;appearance:none}
+.field select{background-image:linear-gradient(45deg,transparent 50%,var(--ink) 50%),linear-gradient(135deg,var(--ink) 50%,transparent 50%);background-position:calc(100% - 4px) 14px,calc(100% - 10px) 14px;background-size:6px 6px;background-repeat:no-repeat}
+.datefield{position:relative}
+.date-display{width:100%;text-align:left;border:0;border-bottom:1px solid #9a968d;background:transparent;color:var(--ink);padding:10px 26px 10px 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;cursor:pointer;position:relative}
+.date-display:after{content:"";position:absolute;right:2px;top:50%;width:9px;height:9px;margin-top:-7px;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);transform:rotate(45deg)}
+.date-display.placeholder{color:#8a867d}
+.date-display:focus{outline:1px solid var(--ink);outline-offset:4px}
+.cal-pop{position:absolute;z-index:40;top:calc(100% + 8px);left:0;background:#fff;border:1px solid #d8d4cb;box-shadow:0 12px 32px rgba(20,18,14,.14);padding:14px;width:272px;max-width:88vw}
+.cal-head{display:flex;align-items:center;justify-content:space-between;font-family:Arial,Helvetica,sans-serif;font-size:12px;letter-spacing:.04em;margin-bottom:10px}
+.cal-nav{border:0;background:none;font-size:16px;line-height:1;cursor:pointer;padding:6px 10px;color:var(--ink)}
+.cal-nav:disabled{opacity:.25;cursor:default}
+.cal-dow{display:grid;grid-template-columns:repeat(7,1fr);font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#8a867d;text-align:center;margin-bottom:4px}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
+.cal-grid button{aspect-ratio:1;border:0;background:none;font-family:Arial,Helvetica,sans-serif;font-size:12.5px;cursor:pointer;border-radius:50%;color:var(--ink)}
+.cal-grid button:hover:not(:disabled){background:#eeeae2}
+.cal-grid button:disabled{color:#c9c5bd;cursor:default}
+.cal-grid button.today{box-shadow:inset 0 0 0 1px #9a968d}
+.cal-grid button.selected{background:var(--ink);color:#fff}
+.cal-grid span.pad{visibility:hidden}
+@media(max-width:520px){.cal-pop{left:50%;transform:translateX(-50%)}}
+.field textarea{min-height:90px;resize:vertical}.field input:focus,.field select:focus,.field textarea:focus{border-bottom-color:var(--ink)}
+.send{justify-self:start;border:1px solid var(--ink);background:transparent;color:var(--ink);padding:12px 24px;font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:.12em;cursor:pointer}
+.send:hover{background:var(--ink);color:var(--cream)}
+.hp{position:absolute;left:-9999px}
+.footer{display:flex;justify-content:space-between;align-items:center;margin-top:90px;font-family:Arial,Helvetica,sans-serif;font-size:9px;color:var(--muted)}
+.footer-links a+a:before{content:"|";margin-right:15px;color:#888}.footer-links a{margin-left:0}.footer-links{display:flex;gap:15px}
+.lightbox{position:fixed;inset:0;background:rgba(10,10,10,.94);display:none;align-items:center;justify-content:center;z-index:100;padding:5vw}
+.lightbox.open{display:flex}.lightbox img{max-width:90vw;max-height:88vh;width:auto;height:auto;object-fit:contain}
+.lb-close,.lb-prev,.lb-next{position:fixed;background:none;border:0;color:#f2f0eb;font-family:Arial,Helvetica,sans-serif;font-size:13px;letter-spacing:.1em;cursor:pointer;padding:14px}
+.lb-close{top:18px;right:18px}.lb-prev{left:8px;top:50%;transform:translateY(-50%);font-size:26px}.lb-next{right:8px;top:50%;transform:translateY(-50%);font-size:26px}
+#maintenance-banner{display:none}
+html[data-site-down="1"] body>*:not(#maintenance-banner){display:none!important}
+html[data-site-down="1"] #maintenance-banner{display:flex!important;min-height:100vh;align-items:center;justify-content:center;font-family:Arial,Helvetica,sans-serif;font-size:13px;letter-spacing:.06em;background:var(--cream);color:var(--ink);text-align:center;padding:5vw}
+@media(max-width:900px){.topnav{padding:28px 7vw 0;flex-direction:column;align-items:flex-start;gap:14px}.page{padding:0 7vw;margin-top:28px}.rail{flex-direction:row;flex-wrap:wrap;gap:14px}.grid{grid-template-columns:1fr 1fr;gap:10px}.row2{grid-template-columns:1fr}.footer{flex-direction:column;gap:10px;align-items:flex-start}}
+</style></head>
+<body>
+<div id="maintenance-banner">This site is temporarily offline for updates. Please check back soon.</div>
+<script src="data.js"></script>
+<div class="detail">
+ <div class="topnav"><a class="brand" href="index.html#top">AKE PETCU</a>
+ <nav class="rail" aria-label="Primary"><a class="active" href="photography.html">PHOTOGRAPHY</a><a href="post-production.html">POST PRODUCTION</a><a href="index.html#about">ABOUT</a><a href="index.html#contact">CONTACT</a></nav></div>
+ <div class="page">
+  <a href="photography.html" class="backlink" id="back-link" onclick="if(history.length>1){event.preventDefault();history.back();}">← BACK</a>
+  <p class="crumbs"><a href="photography.html">PHOTOGRAPHY</a> → <span id="crumb-cat"></span></p>
+  <h1 id="cat-title"></h1>
+  <p class="tagline" id="cat-tagline"></p>
+  <p class="copy" id="cat-intro"></p>
+  <div class="grid" id="grid"></div>
+
+  <div class="book">
+   <h2>Book a session</h2>
+   <p>Tell me a little about what you're after and I'll get back to you with availability and pricing.</p>
+   <form class="form" id="book-form" novalidate>
+    <div class="hp" aria-hidden="true"><label>Leave this empty<input name="website" tabindex="-1" autocomplete="off"></label></div>
+    <div class="row2">
+     <div class="field"><label for="b-name">NAME</label><input id="b-name" name="name" required></div>
+     <div class="field"><label for="b-email">EMAIL</label><input id="b-email" name="email" type="email" required></div>
+    </div>
+    <div class="row2">
+     <div class="field datefield">
+      <label for="date-display">PREFERRED DATE</label>
+      <button type="button" class="date-display" id="date-display" aria-haspopup="dialog" aria-expanded="false">Select a date</button>
+      <input type="hidden" id="b-date" name="date">
+      <div class="cal-pop" id="cal-pop" role="dialog" aria-label="Choose a date" hidden>
+       <div class="cal-head">
+        <button type="button" class="cal-nav" id="cal-prev" aria-label="Previous month">‹</button>
+        <span id="cal-month"></span>
+        <button type="button" class="cal-nav" id="cal-next" aria-label="Next month">›</button>
+       </div>
+       <div class="cal-dow"><span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span></div>
+       <div class="cal-grid" id="cal-grid"></div>
+      </div>
+     </div>
+     <div class="field"><label for="b-type">SESSION TYPE</label><select id="b-type" name="type">
+      <option value="Portrait">Portrait</option>
+      <option value="Editorial">Editorial</option>
+      <option value="Actor Headshots">Actor Headshots</option>
+     </select></div>
+    </div>
+    <div class="field"><label for="b-message">MESSAGE</label><textarea id="b-message" name="message" placeholder="Location, timing, anything else useful to know"></textarea></div>
+    <button class="send" type="submit">REQUEST SESSION</button>
+   </form>
+  </div>
+
+  <footer class="footer"><span>© 2026 AKE PETCU. All rights reserved.</span><span class="footer-links"><a href="privacy.html">Privacy</a><a href="index.html#page-sitemap">Sitemap</a></span></footer>
+ </div>
+</div>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+ <button class="lb-close" id="lb-close">CLOSE ✕</button>
+ <button class="lb-prev" id="lb-prev" aria-label="Previous">‹</button>
+ <img id="lb-img" alt="">
+ <button class="lb-next" id="lb-next" aria-label="Next">›</button>
+</div>
+
+<script>
+window.SITE_DATA_READY.then(function(){
+ if(!window.SITE_DATA){
+  document.querySelector('.page').innerHTML = '<h1>Content could not load</h1><p class="copy">This page needs <code>data.js</code>, which failed to load (check that data.js was uploaded in the same folder as this page). <a href="index.html">Back to Home</a>.</p>';
+  return;
+ }
+ var params = new URLSearchParams(location.search);
+ var cat = params.get('cat') || 'portrait';
+ var data = (window.SITE_DATA.photography || {})[cat];
+ if(!data){ document.querySelector('.page').innerHTML = '<h1>Not found</h1><p class="copy">That gallery does not exist yet. <a href="photography.html">Back to Photography</a>.</p>'; return; }
+ document.title = data.label + ' — Ake Petcu';
+ document.getElementById('crumb-cat').textContent = data.label.toUpperCase();
+ document.getElementById('cat-title').textContent = data.label;
+ document.getElementById('cat-tagline').textContent = data.tagline || '';
+ document.getElementById('cat-intro').textContent = data.intro || '';
+ document.getElementById('b-type').value = data.label;
+ var grid = document.getElementById('grid');
+ (data.images||[]).forEach(function(im, i){
+  var d = document.createElement('div'); d.className='tile'; d.tabIndex=0; d.setAttribute('role','button'); d.setAttribute('aria-label','Open image '+(i+1));
+  var img = document.createElement('img'); img.src = im.src; img.alt = im.alt||''; img.loading='lazy';
+  d.appendChild(img); grid.appendChild(d);
+  function open(){ openLightbox(i); }
+  d.addEventListener('click', open);
+  d.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); open(); } });
+ });
+
+ var images = data.images||[];
+ var idx = 0;
+ var lb = document.getElementById('lightbox'), lbImg = document.getElementById('lb-img');
+ function openLightbox(i){ idx=i; lbImg.src=images[idx].src; lbImg.alt=images[idx].alt||''; lb.classList.add('open'); lb.setAttribute('aria-hidden','false'); }
+ function closeLightbox(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); }
+ function step(d){ idx=(idx+d+images.length)%images.length; lbImg.src=images[idx].src; lbImg.alt=images[idx].alt||''; }
+ document.getElementById('lb-close').addEventListener('click', closeLightbox);
+ document.getElementById('lb-prev').addEventListener('click', function(){ step(-1); });
+ document.getElementById('lb-next').addEventListener('click', function(){ step(1); });
+ lb.addEventListener('click', function(e){ if(e.target===lb) closeLightbox(); });
+ document.addEventListener('keydown', function(e){
+  if(!lb.classList.contains('open')) return;
+  if(e.key==='Escape') closeLightbox();
+  if(e.key==='ArrowLeft') step(-1);
+  if(e.key==='ArrowRight') step(1);
+ });
+
+ // Custom calendar date picker (replaces the native mm/dd/yyyy field)
+ (function(){
+  var display = document.getElementById('date-display');
+  var hidden = document.getElementById('b-date');
+  var pop = document.getElementById('cal-pop');
+  var monthLbl = document.getElementById('cal-month');
+  var grid = document.getElementById('cal-grid');
+  var prevBtn = document.getElementById('cal-prev');
+  var nextBtn = document.getElementById('cal-next');
+  var today = new Date(); today.setHours(0,0,0,0);
+  var view = new Date(today.getFullYear(), today.getMonth(), 1);
+  var selected = null;
+  var monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+  function fmt(d){ return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+  function fmtDisplay(d){ return d.getDate()+' '+monthNames[d.getMonth()].slice(0,3)+' '+d.getFullYear(); }
+
+  function render(){
+   monthLbl.textContent = monthNames[view.getMonth()]+' '+view.getFullYear();
+   var isCurrentMonth = view.getFullYear()===today.getFullYear() && view.getMonth()===today.getMonth();
+   prevBtn.disabled = isCurrentMonth;
+   grid.innerHTML = '';
+   var firstDow = new Date(view.getFullYear(), view.getMonth(), 1).getDay();
+   var daysInMonth = new Date(view.getFullYear(), view.getMonth()+1, 0).getDate();
+   for(var i=0;i<firstDow;i++){ var pad=document.createElement('span'); pad.className='pad'; grid.appendChild(pad); }
+   for(var day=1; day<=daysInMonth; day++){
+    var d = new Date(view.getFullYear(), view.getMonth(), day);
+    var btn = document.createElement('button'); btn.type='button'; btn.textContent = day;
+    if(d.getTime() === today.getTime()) btn.classList.add('today');
+    if(selected && d.getTime() === selected.getTime()) btn.classList.add('selected');
+    if(d.getTime() < today.getTime()){ btn.disabled = true; }
+    else {
+     btn.addEventListener('click', function(dd){ return function(){
+      selected = dd;
+      hidden.value = fmt(dd);
+      display.textContent = fmtDisplay(dd);
+      display.classList.remove('placeholder');
+      closePop();
+     }; }(d));
+    }
+    grid.appendChild(btn);
+   }
+  }
+  function openPop(){ pop.hidden=false; display.setAttribute('aria-expanded','true'); render(); document.addEventListener('click', onOutside); document.addEventListener('keydown', onEsc); }
+  function closePop(){ pop.hidden=true; display.setAttribute('aria-expanded','false'); document.removeEventListener('click', onOutside); document.removeEventListener('keydown', onEsc); }
+  function onOutside(e){ if(!pop.contains(e.target) && e.target!==display) closePop(); }
+  function onEsc(e){ if(e.key==='Escape') closePop(); }
+
+  display.classList.add('placeholder');
+  display.addEventListener('click', function(e){ e.stopPropagation(); pop.hidden ? openPop() : closePop(); });
+  prevBtn.addEventListener('click', function(){ view = new Date(view.getFullYear(), view.getMonth()-1, 1); render(); });
+  nextBtn.addEventListener('click', function(){ view = new Date(view.getFullYear(), view.getMonth()+1, 1); render(); });
+ })();
+
+ var form = document.getElementById('book-form');
+ form.addEventListener('submit', function(e){
+  e.preventDefault();
+  if(form.website.value) return;
+  if(!form.reportValidity()) return;
+  var name=form.name.value.trim(), email=form.email.value.trim(), date=form.date.value, msg=form.message.value.trim();
+  var subject = encodeURIComponent('Session request — '+data.label+(name?' — '+name:''));
+  var body = encodeURIComponent('Name: '+name+'\nEmail: '+email+'\nSession type: '+data.label+'\nPreferred date: '+(date||'—')+'\n\n'+msg);
+  window.location.href = 'mailto:hello@akepetcu.art?subject='+subject+'&body='+body;
+ });
+});
+</script>
+</body></html>

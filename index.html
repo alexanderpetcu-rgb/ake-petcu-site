@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ake Petcu — Photographer & Cinematographer</title>
+<meta name="description" content="Ake Petcu — photographer and cinematographer. Photography and post production.">
+<style>
+:root{--cream:#F2F0EB;--black:#111111;--muted:#6B6863;--dark-muted:#9A9791;--line:#8a8781;--max:1600px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}html,body{margin:0;background:var(--cream);color:var(--black)}body{font-family:Arial,Helvetica,sans-serif}a{color:inherit;text-decoration:none}img{display:block;width:100%;height:100%;object-fit:cover}button,input,textarea{font:inherit}.skip{position:fixed;left:12px;top:-80px;z-index:999;background:#fff;padding:10px}.skip:focus{top:12px}.focus:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:1px solid currentColor;outline-offset:5px}
+/* APPROVED HOME: geometry intentionally preserved */
+.home{height:100svh;min-height:680px;position:relative;overflow:hidden;background:var(--cream)}.identity{position:absolute;left:5vw;top:34px;font-size:12px;letter-spacing:.08em;z-index:3}.nav{position:fixed;right:5vw;top:34px;display:flex;flex-direction:column;align-items:flex-end;gap:7px;font-size:11px;letter-spacing:.08em;line-height:1.1;z-index:3}.nav{transition:color .22s ease}.nav.nav-on-dark{color:var(--cream)}.nav a{position:relative}.nav a:after{content:"";position:absolute;left:0;bottom:-3px;width:0;height:1px;background:currentColor;transition:width .25s ease}.nav a:hover:after,.nav a:focus-visible:after{width:100%}.hero-copy{position:absolute;left:12.5vw;top:35vh}.wordmark{font-family:Arial,Helvetica,sans-serif;font-weight:300;line-height:.82;font-size:clamp(72px,9vw,145px)}.wordmark .wm-line{display:block;white-space:nowrap}.wordmark .wm-line-2{padding-left:.34em}.wordmark .major,.wordmark .minor{font-weight:300}.wordmark .major{font-size:1em}.wordmark .minor{font-size:.72em;letter-spacing:-.045em}.tagline{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:clamp(17px,1.4vw,23px);margin-top:34px}.rule{width:54px;height:1px;background:var(--black);margin-top:21px}.hero-image{position:absolute;left:50%;top:20vh;height:min(67vh,670px);aspect-ratio:4/5;overflow:hidden;background:#d6d3cc}.hero-image img{filter:saturate(.72) contrast(1.03)}
+/* Shared sections */
+.section{min-height:100svh;position:relative;padding:10vh 16vw 10vh 5vw;scroll-margin-top:0}.section-inner{max-width:var(--max);margin:0 auto}.eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:20px}.section h2{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(46px,6vw,92px);line-height:.95;margin:0}.intro{max-width:540px;font-family:Georgia,'Times New Roman',serif;font-size:clamp(18px,1.45vw,24px);line-height:1.45;margin:28px 0 0}.section-rule{width:54px;height:1px;background:currentColor;margin:26px 0 48px}.subnav{display:flex;gap:28px;flex-wrap:wrap;font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-top:28px}.subnav span{border-bottom:1px solid currentColor;padding-bottom:4px}
+.section-cta{display:inline-block;margin-top:34px;font-size:11px;letter-spacing:.11em;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:5px}
+/* Photography */
+.photography{background:var(--cream)}.photo-layout{display:grid;grid-template-columns:minmax(260px,.75fr) minmax(460px,1.25fr);gap:8vw;align-items:center}.photo-art{height:min(68vh,720px);position:relative}.photo-art img{object-position:center}.photo-art small{position:absolute;left:18px;bottom:16px;background:rgba(242,240,235,.9);padding:7px 9px;font-size:10px;letter-spacing:.1em}.categories{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:8vh;border-top:1px solid #b8b4ad}.category{padding:22px 0;border-bottom:1px solid #b8b4ad;font-size:11px;letter-spacing:.1em}.category:nth-child(2){text-align:center}.category:nth-child(3){text-align:right}
+/* Post */
+.post{background:var(--black);color:var(--cream)}.post-layout{display:grid;grid-template-columns:.72fr 1.28fr;gap:8vw;align-items:center}.post-art{height:min(62vh,640px);overflow:hidden}.post-art img{filter:saturate(.7) contrast(1.12)}.post .intro{color:#d8d5cf}.post .subnav{color:#eeeae2}
+/* About */
+.about{background:var(--cream);display:flex;align-items:center}.about-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:10vw;align-items:start}.about-copy{max-width:760px;text-align:justify;text-justify:inter-word;hyphens:auto}.about-copy p{font-family:Georgia,'Times New Roman',serif;font-size:clamp(18px,1.45vw,23px);line-height:1.62;margin:0 0 24px}.about-copy .lead{font-size:clamp(21px,1.8vw,29px)}
+/* Contact */
+.contact{background:var(--black);color:var(--cream);display:flex;align-items:center}.contact-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:10vw;align-items:start}.contact .intro{color:#d8d5cf}.form{display:grid;gap:28px}.field{display:grid;gap:8px}.field label{font-size:10px;letter-spacing:.12em}.field input,.field textarea{width:100%;border:0;border-bottom:1px solid #86837D;background:transparent;color:var(--cream);padding:12px 0;border-radius:0;outline:none}.field textarea{min-height:130px;resize:vertical}.field input:focus,.field textarea:focus{border-bottom-color:var(--cream)}.send{justify-self:start;border:1px solid #86837D;background:transparent;color:var(--cream);padding:13px 26px;font-size:11px;letter-spacing:.12em;cursor:pointer}.send:hover{background:var(--cream);color:var(--black)}.form-note{font-size:11px;color:#aaa69f;line-height:1.5;max-width:520px}.hp{position:absolute;left:-9999px}.contact-email{display:inline-block;margin-top:28px;border-bottom:1px solid #86837D;padding-bottom:4px}.privacy{display:inline-block;margin-top:36px;font-size:10px;letter-spacing:.1em;color:#aaa69f}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.nav a:after{transition:none}}
+@media(max-width:999px),(max-aspect-ratio:6/5){.nav{position:static}.home{height:auto;min-height:100svh;overflow:visible;padding:28px 7vw 10vw}.identity,.nav,.hero-copy,.hero-image{position:static}.identity{display:block;margin:0 0 14px}.nav{flex-direction:row;flex-wrap:wrap;align-items:flex-start;gap:14px;margin-bottom:12vh}.hero-copy{margin-left:5vw}.wordmark{font-size:clamp(64px,17vw,120px)}.tagline{margin-top:26px}.hero-image{margin:12vh auto 0;width:min(82vw,520px);height:auto;aspect-ratio:4/5}.section{min-height:auto;padding:90px 7vw}.photo-layout,.post-layout,.about-grid,.contact-grid{grid-template-columns:1fr;gap:52px}.photo-art,.post-art{height:auto;aspect-ratio:4/5}.post-art{aspect-ratio:16/10}.categories{grid-template-columns:1fr;margin-top:60px}.category,.category:nth-child(2),.category:nth-child(3){text-align:left}.section h2{font-size:clamp(44px,13vw,72px)}}
+
+/* Embedded detail pages: same-file routing prevents local file-not-found errors */
+.route-page{display:none;min-height:100vh;padding:0 0 26px;position:relative;background:#f2f0eb;color:#111}
+.route-page.is-active{display:block}.route-page.dark{background:#0a0e0f;color:#f2f0eb}
+.route-topnav{display:flex;justify-content:space-between;align-items:flex-start;padding:34px 5vw 0}
+.route-brand{font-family:Arial,Helvetica,sans-serif;font-size:12px;letter-spacing:.08em}
+.route-rail{display:flex;flex-direction:column;align-items:flex-start;gap:10px;font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:.08em}
+.route-rail a{position:relative}.route-rail a.active:before{content:"•";position:absolute;margin-left:-22px;font-size:16px;line-height:8px}
+.route-main{max-width:1280px;margin:56px auto 0;padding:0 5vw}.route-main h1{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:clamp(54px,6.2vw,86px);line-height:.95;margin:0 0 20px}
+.route-backlink{display:inline-block;font-family:Arial,Helvetica,sans-serif;font-size:10px;letter-spacing:.1em;color:#6b6863;margin:0 0 18px;border-bottom:1px solid transparent}.route-backlink:hover{border-bottom-color:currentColor}.dark .route-backlink{color:#a9a59d}
+.route-tagline{font-family:Georgia,"Times New Roman",serif;font-size:clamp(17px,1.55vw,23px);margin:0 0 14px}.route-copy{max-width:610px;font-family:Georgia,"Times New Roman",serif;font-size:15px;line-height:1.25;margin:0 0 8px}
+.route-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}.route-card figure{margin:0;aspect-ratio:1.28/1;overflow:hidden;background:#ccc}.route-card img{width:100%;height:100%;object-fit:cover}.dark .route-card figure{border:1px solid #9b978f}
+.route-cardbar{display:flex;align-items:center;justify-content:space-between;margin-top:13px;font-family:Arial,Helvetica,sans-serif;font-size:10px;letter-spacing:.04em;text-transform:uppercase}.route-view{white-space:nowrap}
+.route-footer{display:flex;justify-content:space-between;align-items:center;margin-top:78px;font-family:Arial,Helvetica,sans-serif;font-size:9px}.route-footer-links{display:flex;gap:15px}.route-footer-links a+a:before{content:"|";margin-right:15px;color:#888}
+.privacy-page .route-main{max-width:760px;margin-top:56px}.privacy-page .route-copy{font-size:16px;line-height:1.7;max-width:650px}.privacy-page .route-main h1{margin-bottom:35px}
+body.route-open main#home-main,body.route-open>.identity,body.route-open>.nav{display:none!important}
+@media(max-width:900px){.route-topnav{padding:28px 7vw 0;flex-direction:column;align-items:flex-start;gap:14px}.route-main{padding:0 7vw;margin-top:28px}.route-rail{flex-direction:row;flex-wrap:wrap;gap:14px}.route-rail a.active:before{display:none}.route-cards{grid-template-columns:1fr}.route-copy{max-width:100%}.route-footer{margin-top:55px}.route-card figure{aspect-ratio:4/3}}
+@media(max-width:900px) and (min-width:600px){.route-cards{grid-template-columns:repeat(2,1fr)}.route-card:last-child:nth-child(odd){grid-column:1/-1;max-width:calc(50% - 9px)}}
+#maintenance-banner{display:none}
+html[data-site-down="1"] body>*:not(#maintenance-banner){display:none!important}
+html[data-site-down="1"] #maintenance-banner{display:flex!important;min-height:100vh;align-items:center;justify-content:center;font-family:Arial,Helvetica,sans-serif;font-size:13px;letter-spacing:.06em;background:var(--cream);color:var(--black);text-align:center;padding:5vw}
+</style>
+</head>
+<body>
+<div id="maintenance-banner">This site is temporarily offline for updates. Please check back soon.</div>
+<script src="data.js"></script>
+<a class="skip" href="#photography">Skip to work</a>
+<main id="home-main">
+<section class="home" id="top" aria-label="Ake Petcu home">
+  <a class="identity" href="#top">AKE PETCU</a>
+  <nav class="nav" aria-label="Primary">
+    <a href="#page-photography">PHOTOGRAPHY</a>
+    <a href="#page-post-production">POST PRODUCTION</a>
+    <a href="#about">ABOUT</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+  <section class="hero-copy" aria-label="Introduction">
+    <div class="wordmark" aria-label="Ake Petcu"><span class="wm-line"><span class="major">A</span><span class="minor">KE</span></span><span class="wm-line wm-line-2"><span class="major">P</span><span class="minor">ETCU</span></span></div>
+    <div class="tagline">art beyond the frame</div><div class="rule"></div>
+  </section>
+  <figure class="hero-image"><img src="assets/portrait-test.jpg" alt="Temporary portrait image used while the final portfolio photograph is selected"></figure>
+</section>
+
+<section class="section photography" id="photography">
+ <div class="section-inner">
+  <div class="photo-layout">
+   <div>
+    <div class="eyebrow">Photography</div><h2>People<br>Presence<br>Character</h2><div class="section-rule"></div>
+    <p class="intro">Portrait, editorial and actor headshot photography built around controlled light, precise framing and a straightforward approach.</p>
+   <a class="section-cta" href="#page-photography">EXPLORE PHOTOGRAPHY →</a>
+   </div>
+   <figure class="photo-art"><img src="assets/photography-test.jpg" alt="Temporary close-up photographic study"><small>TEST IMAGE · TO BE REPLACED</small></figure>
+  </div>
+ </div>
+</section>
+
+<section class="section post" id="post-production">
+ <div class="section-inner post-layout">
+  <div>
+   <div class="eyebrow">Post Production</div><h2>Editing<br>Color<br>Sound</h2><div class="section-rule"></div>
+   <p class="intro">Editing, color grading and sound design for film and visual projects, shaped through rhythm, tone and detail.</p>
+   <a class="section-cta" href="#page-post-production">EXPLORE POST PRODUCTION →</a>
+  </div>
+  <figure class="post-art"><img src="assets/postproduction-test.jpg" alt="Temporary dark detail image used for the post-production section"></figure>
+ </div>
+</section>
+
+<section class="section about" id="about">
+ <div class="section-inner about-grid">
+  <div><div class="eyebrow">About</div><h2>Ake<br>Petcu</h2><div class="section-rule"></div><div class="eyebrow" id="about-eyebrow">Photographer and cinematographer</div></div>
+  <div class="about-copy">
+   <p class="lead">His work is, first and foremost, about people. He is interested in presence, character, and that small distance between how we want to be seen and what the camera discovers.</p>
+   <p>He studied cinematography at UNATC Bucharest. His background in cinematography naturally informs the way he photographs, through light, space, colour and atmosphere. Sometimes the image is direct and stripped back to its essentials. At other times it becomes constructed, editorial or experimental. He is less interested in perfection than in what gives an image its character.</p>
+   <p>His work with moving image, editing, colour and sound continues the same visual process.</p><a class="section-cta" href="#contact">GET IN TOUCH →</a>
+  </div>
+ </div>
+</section>
+
+<section class="section contact" id="contact">
+ <div class="section-inner contact-grid">
+  <div><div class="eyebrow">Contact</div><h2>Say<br><span id="contact-heading">hello</span></h2><div class="section-rule"></div><p class="intro">For commissions, collaborations and enquiries.</p><a class="contact-email" href="mailto:hello@akepetcu.art">hello@akepetcu.art</a><br><a class="privacy" href="#page-privacy">PRIVACY</a></div>
+  <form class="form" id="contact-form" novalidate>
+   <div class="hp" aria-hidden="true"><label>Leave this empty<input name="website" tabindex="-1" autocomplete="off"></label></div>
+   <div class="field"><label for="name">NAME</label><input id="name" name="name" autocomplete="name" required></div>
+   <div class="field"><label for="email">EMAIL</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+   <div class="field"><label for="message">MESSAGE</label><textarea id="message" name="message" required></textarea></div>
+   <button class="send" type="submit">SEND</button>
+   <div class="form-note" id="form-note">The form opens your email application and addresses the message to hello@akepetcu.art. A direct server-side form can be connected later without changing this layout.</div>
+  </form>
+ </div>
+</section>
+</main>
+
+<section id="page-photography" class="route-page" aria-label="Photography page">
+ <div class="route-topnav"><a class="route-brand" href="#top">AKE PETCU</a><nav class="route-rail" aria-label="Primary"><a class="active" href="#page-photography">PHOTOGRAPHY</a><a href="#page-post-production">POST PRODUCTION</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a></nav></div>
+ <div class="route-main"><a class="route-backlink" href="#top" onclick="if(history.length>1){event.preventDefault();history.back();}">← BACK</a><h1>Photography</h1><p class="route-tagline">People. Stories. Places.</p><p class="route-copy">Photography begins with attention: to people, light and the small moments that often go unnoticed. The work moves between portraiture, editorial photography and actor headshots, with an emphasis on character and a clear visual language.</p><p class="route-copy">Whether the image is direct or more constructed, light, framing and atmosphere remain central to the process.</p>
+ <div class="route-cards"><a class="route-card" href="gallery.html?cat=portrait"><figure><img src="assets/portrait-test.jpg" alt="Temporary image for Portrait"></figure><div class="route-cardbar"><span>Portrait</span><span class="route-view">VIEW →</span></div></a><a class="route-card" href="gallery.html?cat=editorial"><figure><img src="assets/photography-test.jpg" alt="Temporary image for Editorial"></figure><div class="route-cardbar"><span>Editorial</span><span class="route-view">VIEW →</span></div></a><a class="route-card" href="gallery.html?cat=actor-headshots"><figure><img src="assets/actor-headshots-test.jpg" alt="Actor headshot"></figure><div class="route-cardbar"><span>Actor Headshots</span><span class="route-view">VIEW →</span></div></a></div>
+ <footer class="route-footer"><span>© 2026 AKE PETCU. All rights reserved.</span><span class="route-footer-links"><a href="#page-privacy">Privacy</a><a href="#page-sitemap">Sitemap</a></span></footer></div>
+</section>
+<section id="page-post-production" class="route-page dark" aria-label="Post Production page">
+ <div class="route-topnav"><a class="route-brand" href="#top">AKE PETCU</a><nav class="route-rail" aria-label="Primary"><a href="#page-photography">PHOTOGRAPHY</a><a class="active" href="#page-post-production">POST PRODUCTION</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a></nav></div>
+ <div class="route-main"><a class="route-backlink" href="#top" onclick="if(history.length>1){event.preventDefault();history.back();}">← BACK</a><h1>Post Production</h1><p class="route-tagline">Shape. Refine. Enhance.</p><p class="route-copy">Editing, color grading and sound design for film and visual projects, shaped through rhythm, tone and detail.</p><p class="route-copy">From short films and documentaries to commercial and music projects, each stage is approached as part of the same visual and sonic process.</p>
+ <div class="route-cards"><a class="route-card" href="post.html?cat=editing"><figure><img src="assets/editing.jpg" alt="Editing timeline" loading="lazy"></figure><div class="route-cardbar"><span>Editing</span><span class="route-view">VIEW →</span></div></a><a class="route-card" href="post.html?cat=color"><figure><img src="assets/color.jpg" alt="Color grading controls" loading="lazy"></figure><div class="route-cardbar"><span>Color</span><span class="route-view">VIEW →</span></div></a><a class="route-card" href="post.html?cat=sound-design"><figure><img src="assets/sound-design.jpg" alt="Sound design waveform" loading="lazy"></figure><div class="route-cardbar"><span>Sound Design</span><span class="route-view">VIEW →</span></div></a></div>
+ <footer class="route-footer"><span>© 2026 AKE PETCU. All rights reserved.</span><span class="route-footer-links"><a href="#page-privacy">Privacy</a><a href="#page-sitemap">Sitemap</a></span></footer></div>
+</section>
+<section id="page-privacy" class="route-page privacy-page" aria-label="Privacy page">
+ <div class="route-topnav"><a class="route-brand" href="#contact">← AKE PETCU</a></div><div class="route-main"><h1>Privacy</h1><p class="route-copy">This site does not use analytics or marketing trackers. The contact form does not store your message on this website; it opens your email application so the message can be sent directly to hello@akepetcu.art.</p><p class="route-copy">If the contact system changes later, this notice will be updated accordingly.</p></div>
+</section>
+<section id="page-sitemap" class="route-page privacy-page" aria-label="Sitemap page">
+ <div class="route-topnav"><a class="route-brand" href="#top">AKE PETCU</a>
+ <nav class="route-rail" aria-label="Primary"><a href="#page-photography">PHOTOGRAPHY</a><a href="#page-post-production">POST PRODUCTION</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a></nav></div>
+ <div class="route-main"><a class="route-backlink" href="#top" onclick="if(history.length>1){event.preventDefault();history.back();}">← BACK</a><h1>Sitemap</h1><p class="route-copy"><a href="#top">Home</a></p><p class="route-copy"><a href="#page-photography">Photography</a></p><p class="route-copy"><a href="#page-post-production">Post Production</a></p><p class="route-copy"><a href="#about">About</a></p><p class="route-copy"><a href="#contact">Contact</a></p><p class="route-copy"><a href="#page-privacy">Privacy</a></p></div>
+</section>
+<script>
+const form=document.getElementById('contact-form');
+form.addEventListener('submit',e=>{e.preventDefault();if(form.website.value)return;if(!form.reportValidity())return;const name=form.name.value.trim(),email=form.email.value.trim(),message=form.message.value.trim();const subject=encodeURIComponent('Website enquiry — '+name);const body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\n'+message);window.location.href='mailto:hello@akepetcu.art?subject='+subject+'&body='+body;});
+</script>
+
+
+<script>
+const homeNav=document.querySelector('.nav');
+const darkNavSections=[document.getElementById('post-production'),document.getElementById('contact')].filter(Boolean);
+if(homeNav&&darkNavSections.length){
+ const updateHomeNavColor=()=>{
+  if(document.body.classList.contains('route-open')){homeNav.classList.remove('nav-on-dark');return;}
+  const navRect=homeNav.getBoundingClientRect();
+  const probeY=navRect.top + Math.min(navRect.height/2,48);
+  const onDark=darkNavSections.some(section=>{const r=section.getBoundingClientRect();return probeY>=r.top&&probeY<=r.bottom;});
+  homeNav.classList.toggle('nav-on-dark',onDark);
+ };
+ addEventListener('scroll',updateHomeNavColor,{passive:true});
+ addEventListener('resize',updateHomeNavColor);
+ updateHomeNavColor();
+}
+</script>
+
+<script>
+(function(){
+ const routeIds=['page-photography','page-post-production','page-privacy','page-sitemap'];
+ function renderRoute(){
+  const id=location.hash.slice(1);
+  const isRoute=routeIds.includes(id);
+  document.body.classList.toggle('route-open',isRoute);
+  document.querySelectorAll('.route-page').forEach(el=>el.classList.toggle('is-active',el.id===id));
+  if(isRoute){window.scrollTo(0,0);return;}
+  // When leaving a routed page for a Home section, wait until Home is visible, then scroll exactly there.
+  if(['about','contact','photography','post-production','top'].includes(id)){
+   requestAnimationFrame(()=>{
+    const target=id==='top'?document.getElementById('top'):document.getElementById(id);
+    if(target) target.scrollIntoView({behavior:'auto',block:'start'});
+   });
+  }
+  // hashes belonging to cards are placeholders for future galleries; keep the detail page visible
+  const photoCards=['portrait','editorial','actor-headshots'];
+  const postCards=['editing','color','sound-design'];
+  if(photoCards.includes(id)){history.replaceState(null,'','#page-photography');renderRoute();}
+  if(postCards.includes(id)){history.replaceState(null,'','#page-post-production');renderRoute();}
+ }
+ window.addEventListener('hashchange',renderRoute);renderRoute();
+})();
+</script>
+<script>
+window.SITE_DATA_READY.then(function(){
+ try{
+  var t = (window.SITE_DATA && window.SITE_DATA.texts) || {};
+  if(t.aboutEyebrow) document.getElementById('about-eyebrow').textContent = t.aboutEyebrow;
+  if(t.contactHeading) document.getElementById('contact-heading').textContent = t.contactHeading;
+ }catch(e){}
+});
+</script>
+</body></html>

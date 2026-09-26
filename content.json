@@ -1,0 +1,77 @@
+{
+  "siteDown": false,
+  "texts": {
+    "aboutEyebrow": "Photographer and cinematographer",
+    "contactHeading": "hello"
+  },
+  "photography": {
+    "portrait": {
+      "label": "Portrait",
+      "tagline": "One face, fully considered.",
+      "intro": "One-to-one sessions, natural light or studio. Less about a pose and more about a few minutes of real attention — the kind of picture that still looks like you in ten years.",
+      "images": [
+        { "src": "assets/gallery-portrait-1.jpg", "alt": "Portrait study 1" },
+        { "src": "assets/gallery-portrait-2.jpg", "alt": "Portrait study 2" },
+        { "src": "assets/gallery-portrait-3.jpg", "alt": "Portrait study 3" },
+        { "src": "assets/gallery-portrait-4.jpg", "alt": "Portrait study 4" },
+        { "src": "assets/gallery-portrait-5.jpg", "alt": "Portrait study 5" },
+        { "src": "assets/gallery-portrait-6.jpg", "alt": "Portrait study 6" }
+      ]
+    },
+    "editorial": {
+      "label": "Editorial",
+      "tagline": "A concept, staged and lit.",
+      "intro": "Shoots built around an idea: styling, location and light planned in advance and directed on the day, for magazines, brands and personal series.",
+      "images": [
+        { "src": "assets/gallery-editorial-1.jpg", "alt": "Editorial study 1" },
+        { "src": "assets/gallery-editorial-2.jpg", "alt": "Editorial study 2" },
+        { "src": "assets/gallery-editorial-3.jpg", "alt": "Editorial study 3" },
+        { "src": "assets/gallery-editorial-4.jpg", "alt": "Editorial study 4" },
+        { "src": "assets/gallery-editorial-5.jpg", "alt": "Editorial study 5" },
+        { "src": "assets/gallery-editorial-6.jpg", "alt": "Editorial study 6" }
+      ]
+    },
+    "actor-headshots": {
+      "label": "Actor Headshots",
+      "tagline": "Made for casting directors.",
+      "intro": "Sharp, current headshots that read well at thumbnail size. Quick, simple direction on the day, and a contact sheet back the same evening so you can pick fast.",
+      "images": [
+        { "src": "assets/gallery-actor-headshots-1.jpg", "alt": "Actor headshot 1" },
+        { "src": "assets/gallery-actor-headshots-2.jpg", "alt": "Actor headshot 2" },
+        { "src": "assets/gallery-actor-headshots-3.jpg", "alt": "Actor headshot 3" },
+        { "src": "assets/gallery-actor-headshots-4.jpg", "alt": "Actor headshot 4" },
+        { "src": "assets/gallery-actor-headshots-5.jpg", "alt": "Actor headshot 5" },
+        { "src": "assets/gallery-actor-headshots-6.jpg", "alt": "Actor headshot 6" }
+      ]
+    }
+  },
+  "post": {
+    "editing": {
+      "label": "Editing",
+      "tagline": "Rhythm, structure, cut.",
+      "cover": "assets/editing.jpg",
+      "projects": [
+        { "id": "city-of-glass", "title": "City of Glass", "type": "Short film", "description": "A 14-minute short edited from roughly nine hours of footage, built around a single reveal saved for the final cut.", "vimeoId": "76979871", "beforeAfter": false },
+        { "id": "night-shift", "title": "Night Shift", "type": "Documentary", "description": "Observational documentary editing across a five-day shoot, structured into three acts without a scripted narration track.", "vimeoId": "148751763", "beforeAfter": false }
+      ]
+    },
+    "color": {
+      "label": "Color",
+      "tagline": "Tone, contrast, consistency.",
+      "cover": "assets/color.jpg",
+      "projects": [
+        { "id": "low-tide", "title": "Low Tide", "type": "Music video", "description": "Full grade for a music video shot on mixed cameras, matched to a single desaturated, warm-shadow look.", "vimeoId": "76979871", "beforeAfter": true },
+        { "id": "harbor-light", "title": "Harbor Light", "type": "Commercial", "description": "Product commercial graded for a cleaner, higher-contrast daylight look while keeping skin tones neutral.", "vimeoId": "148751763", "beforeAfter": true }
+      ]
+    },
+    "sound-design": {
+      "label": "Sound Design",
+      "tagline": "What you feel before you notice it.",
+      "cover": "assets/sound-design.jpg",
+      "projects": [
+        { "id": "static-hour", "title": "Static Hour", "type": "Short film", "description": "Full sound design and mix built from location audio, foley and a sparse synth bed.", "vimeoId": "76979871", "beforeAfter": false },
+        { "id": "open-water", "title": "Open Water", "type": "Documentary", "description": "Dialogue cleanup, ambient layering and final mix for a feature-length documentary.", "vimeoId": "148751763", "beforeAfter": false }
+      ]
+    }
+  }
+}
