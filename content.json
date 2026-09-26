@@ -1,5 +1,9 @@
 {
   "siteDown": false,
+  "home": {
+    "heroImage": "assets/portrait-test.jpg",
+    "heroAlt": "Ake Petcu — photography and visual work"
+  },
   "texts": {
     "aboutEyebrow": "Photographer and cinematographer",
     "contactHeading": "hello"
